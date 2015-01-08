@@ -9,17 +9,32 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+       
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
+    
+  
 }
 
+    protocol PizzaOrderingsequence{
+        func set_size(size:Sizes)
+        func set_toppings(toppings:Array<Toppings>)
+        func set_address(String)
+        func get_time_till_delivered() -> Int
+        
+    }
+
+enum Sizes: Int {
+    case Small = 0
+    case Medium = 1
+    case large = 2
+}
+enum Toppings: String {
+    case Pepperoni = "pepperoni"
+    case Mushrooms = "mushrooms"
+    case peppers = "peppers"
+}
